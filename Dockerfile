@@ -26,7 +26,7 @@ RUN apk add --no-cache composer curl \
     php7 php7-fpm php7-gd php7-intl php7-pdo php7-opcache php7-xmlrpc php7-xmlwriter php7-tokenizer php7-fileinfo \
     php7-exif php7-bcmath php7-zip php7-xsl php7-xml php7-soap php7-mbstring php7-simplexml php7-redis \
     php7-pdo_mysql php7-pdo_pgsql php7-pdo_sqlite php7-fileinfo php7-ctype php7-memcached php7-curl \
-    php7-json php7-session  && rm -rf /var/cache/apk/*
+    php7-json php7-session php-mysql && rm -rf /var/cache/apk/*
 
 ENV TZ=Asia/Jakarta
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
