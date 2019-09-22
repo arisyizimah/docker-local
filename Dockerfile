@@ -9,6 +9,7 @@ RUN apk add --no-cache \
   libjpeg-turbo \
   freetype-dev \
   libpng-dev \
+  libcurl \
   libjpeg-turbo-dev && \
   
   docker-php-ext-configure gd \
@@ -27,7 +28,6 @@ RUN apk add --no-cache composer curl \
         php7-fpm \
         php7-gd \
         php7-intl \
-        php7-pdo \
         php7-opcache \
         php7-xmlrpc \
         php7-xmlwriter \
