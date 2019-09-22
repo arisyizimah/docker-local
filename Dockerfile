@@ -9,8 +9,7 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
   docker-php-ext-install -j${NPROC} gd && \
 #  apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
-
-RUN apk add --no-cache nodejs npm
+  apk add --no-cache nodejs npm
 
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community gnu-libiconv
 RUN apk add --no-cache composer \
