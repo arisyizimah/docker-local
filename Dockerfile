@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM php:7-fpm-alpine
 
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community gnu-libiconv
 
