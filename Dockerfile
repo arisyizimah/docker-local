@@ -2,7 +2,6 @@ FROM php:7-fpm-alpine
 
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community gnu-libiconv
 
-
 RUN apk add --no-cache \
   freetype \
   libpng \
@@ -22,6 +21,8 @@ RUN apk add --no-cache \
   docker-php-ext-install -j${NPROC} gd && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev  && \
   apk add --no-cache nodejs npm
+
+RUN docker-php-ext-install mysqli pdo pdo_mysql          
 
 RUN apk add --no-cache composer curl \
         php7 \
@@ -60,6 +61,8 @@ RUN apk add --no-cache composer curl \
         php7-json \
         php7-session && \
         rm -Rf /var/cache/apk/*
+
+
 
 ENV TZ=Asia/Jakarta
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
