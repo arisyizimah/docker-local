@@ -20,7 +20,7 @@ RUN apk add --no-cache \
 
   docker-php-ext-install -j${NPROC} gd && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev  && \
-  apk add --no-cache nodejs npm
+  apk add --no-cache nodejs-current npm yarn
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql          
 
