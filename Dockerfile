@@ -19,7 +19,7 @@ RUN apk add --no-cache \
   NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
 
   docker-php-ext-install -j${NPROC} gd && \
-  apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev  && \
+  # apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev  && \
   apk add --no-cache nodejs-current npm yarn
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql          
