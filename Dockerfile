@@ -9,7 +9,8 @@ RUN apk add --no-cache \
   freetype-dev \
   libpng-dev \
   libcurl \
-  libjpeg-turbo-dev && \
+  libjpeg-turbo-dev \
+  zlib libzip libzip-dev && \
   
   docker-php-ext-configure gd \
     --with-gd \
@@ -22,7 +23,7 @@ RUN apk add --no-cache \
   # apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev  && \
   apk add --no-cache nodejs-current npm yarn
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql          
+RUN docker-php-ext-install mysqli pdo pdo_mysql zip         
 
 RUN apk add --no-cache composer curl \
         php7 \
